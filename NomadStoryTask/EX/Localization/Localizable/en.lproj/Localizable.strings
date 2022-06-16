@@ -1,0 +1,72 @@
+/* 
+  Localizable.strings
+  EverDeliever
+
+  Created by Ahmed on 5/10/22.
+  
+*/
+
+"welcome" = "Welcome";
+"SAR" =  " SAR";
+"Done" = "Done";
+"Delete" = "Delete";
+"pleaseLogin" = "please, Login";
+"Login" = "Login";
+"Ok" = "Ok";
+"Cancel" = "Cancel";
+"KM" = "KM";
+"Open" = "Open";
+"/" = "/";
+"Closed" = "Closed";
+"min" = " min";
+"logOut" = "Log out";
+"areYouSureYouWantToLogout" = "Are you sure, you want to logout ?";
+"choosePhotoFrom" = "Choose Photo From";
+"Camera" = "Camera";
+"Library" = "Library";
+"selectTheReason" = "Select the reason";
+"pleaseSelectAddress" = "please, select address";
+"pleaseSelectHomeOrWorkOrBreakOrFriend" = "please, select Home or Work or Break or Friend";
+
+"setting" = "Setting";
+"search" = "Search";
+"mainSection" = "Main Section";
+"all" = "All";
+
+"pleaseEnterFirstCodeNumber" = "please, enter first code number";
+"pleaseEnterSecondCodeNumber" = "please, enter second code number";
+"pleaseEnterThirdCodeNumber" = "please, enter third code number";
+"pleaseEnterFourthCodeNumber" = "please, enter fourth code number";
+
+"myAccount" = "My Account";
+"settings" = "Settings";
+"favourite" = "Favourite";
+"orders" = "Orders";
+"myLocations" = "My Locations";
+"termsAndConditions" = "Terms and Conditions";
+"privacyPolicy" = "Privacy Policy";
+"aboutUs" = "About Us";
+
+"cash" = "cash";
+
+"youHaveEnteredAnInvalidValue" = "You have entered an invalid value.";
+"yourPasswordIsTooLong" = "Your password is too long.";
+"yourpasswordistooshort" = "Your password is too short.";
+"youremailisinValid" = "Your email is inValid.";
+"yourusernameistoolong" = "Your username is too long.";
+"yourusernameistooshort" = "Your username is too short.";
+"yourcodeIsTooLong" = "Your code is too long.";
+"yourcodeIsTooShort" = "Your code is too short.";
+"yourPhoneIsTooShort" = "Your Phone is too short.";
+"yourPhoneIsTooLong" = "Your Phone is too long.";
+"yourNameIsNotExist" = "Your name is not exist.";
+"yourPhoneIsNotExist" = "Your phone is not exist.";
+"yourEmailIsNotExist" = "Your email is not exist.";
+"yourBirthOfDateIsNotExist" = "Your birth of date is not exist.";
+"costOfYourOrderIsGood" = "Cost of your order is good.";
+"costOfYourOrderMustBeNoMoreThan500SAR" = "Cost of your order must be no more than 500 SAR.";
+"YourPhoneIsInValid" = "Your phone is inValid.";
+"yourPasswordMustBeLeastOneUppercaseLeastOneDigitLeastOneLowercaseLeastOneSymbolMin8CharactersTotal" = "Your password must be least one uppercase, least one digit, least one lowercase, least one symbol, min 8 characters total";
+"invalidCalculateTotalCost" = "Invalid Calculate total cost.";
+
+

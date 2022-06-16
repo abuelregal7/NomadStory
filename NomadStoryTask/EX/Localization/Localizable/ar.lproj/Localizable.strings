@@ -1,0 +1,70 @@
+/* 
+  Localizable.strings
+  EverDeliever
+
+  Created by Ahmed on 5/10/22.
+  
+*/
+
+"welcome" = "مرحبا";
+"SAR" =  " ر.س";
+"Done" = "تم";
+"Delete" = "حذف";
+"pleaseLogin" = "من فضلك, قم بتسجيل الخروج";
+"Login" = "تسجيل الدخول";
+"Ok" = "نعم";
+"Cancel" = "إلغاء";
+"KM" = "كم";
+"Open" = "مفتوح";
+"/" = "/";
+"Closed" = "مغلق";
+"min" = "د";
+"logOut" = "تسجيل خروج";
+"areYouSureYouWantToLogout" = "هل انت متأكد, تريد تسجيل الخروج";
+"choosePhotoFrom" = "اختار صورة من";
+"Camera" = "الكاميرا";
+"Library" = "معرض الصور";
+"selectTheReason" = "اختار السبب";
+"pleaseSelectAddress" = "من فضلك, اختار الموقع";
+"pleaseSelectHomeOrWorkOrBreakOrFriend" = "من فضلك, اختار نوع المكان منزل او عمل او استراحة او منزل صديق";
+
+"setting" = "الاعدادات";
+"search" = "البحث";
+"mainSection" = "الأقسام الرئيسيه";
+"all" = "الكل";
+
+"pleaseEnterFirstCodeNumber" = "من فضلك, ادخل الرقم الأول من الكود";
+"pleaseEnterSecondCodeNumber" = "من فضلك, ادخل الرقم الثاني من الكود";
+"pleaseEnterThirdCodeNumber" = "من فضلك, ادخل الرقم الثالث من الكود";
+"pleaseEnterFourthCodeNumber" = "من فضلك, ادخل الرقم الرابع من الكود";
+
+"myAccount" = "حسابي";
+"settings" = "الإعدادات";
+"favourite" = "المفضلة";
+"orders" = "طلباتي";
+"myLocations" = "العناوين";
+"termsAndConditions" = "الشروط والأحكام";
+"privacyPolicy" = "سياسة الخصوصية";
+"aboutUs" = "من نحن";
+
+"cash" = "نقدي";
+
+"youHaveEnteredAnInvalidValue" = "القيمة المدخله ليست صحيحة";
+"yourPasswordIsTooLong" = "كلمة مرورك طويلة جدا .";
+"yourpasswordistooshort" = "كلمة المرور الخاصة بك قصيرة جدا .";
+"youremailisinValid" = "بريدك الالكتروني خاطئ.";
+"yourusernameistoolong" = "اسم المستخدم الخاص بك طويل جدا.";
+"yourusernameistooshort" = "اسم المستخدم الخاص بك قصير جدا.";
+"yourcodeIsTooLong" = "Your code is too long.";
+"yourcodeIsTooShort" = "Your code is too short.";
+"yourPhoneIsTooShort" = "رقم الجوال قصير جدا .";
+"yourPhoneIsTooLong" = "رقم الجوال طويل جدا .";
+"yourNameIsNotExist" = "اسمك غير موجود .";
+"yourPhoneIsNotExist" = "رقم جوالك غير موجود .";
+"yourEmailIsNotExist" = "بريدك الالكتروني غير موجود .";
+"yourBirthOfDateIsNotExist" = "تاريخ ميلادك غير موجود .";
+"costOfYourOrderIsGood" = "تكلفه طلبك جيده .";
+"costOfYourOrderMustBeNoMoreThan500SAR" = "تكلفه طلبك يجب الا تزيد عن 500 ر.س .";
+"YourPhoneIsInValid" = "رقم جوالك خاطئ .";
+"yourPasswordMustBeLeastOneUppercaseLeastOneDigitLeastOneLowercaseLeastOneSymbolMin8CharactersTotal" = "يجب أن تتكون كلمة مرورك من حرف كبير واحد على الأقل ، ورقم واحد على الأقل ، وحرف صغير واحد على الأقل ، ورمز واحد على الأقل ، وإجمالي 8 أحرف على الأقل .";
+"invalidCalculateTotalCost" = "حساب غير صالح للتكلفة الإجمالية .";
