@@ -104,6 +104,8 @@
 		E2479CA7285A744700D0E9C2 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2479C53285A744700D0E9C2 /* NetworkRequest.swift */; };
 		E24F9551285BB46100B3E040 /* TotalPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F954F285BB46100B3E040 /* TotalPriceTableViewCell.swift */; };
 		E24F9552285BB46100B3E040 /* TotalPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24F9550285BB46100B3E040 /* TotalPriceTableViewCell.xib */; };
+		E24F955A285BBAE300B3E040 /* MainScreenTableView+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F9559285BBAE300B3E040 /* MainScreenTableView+EX.swift */; };
+		E24F955F285BBB2C00B3E040 /* DetailsProductTableView+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F955E285BBB2C00B3E040 /* DetailsProductTableView+EX.swift */; };
 		E27A216F285B1580004E7E75 /* ApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A216E285B1580004E7E75 /* ApiServiceTest.swift */; };
 		F033E4F73210AFB010F7A74F /* Pods_NomadStoryTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7925549326973A3D1B5B1F3A /* Pods_NomadStoryTask.framework */; };
 /* End PBXBuildFile section */
@@ -237,6 +239,8 @@
 		E2479C53285A744700D0E9C2 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		E24F954F285BB46100B3E040 /* TotalPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPriceTableViewCell.swift; sourceTree = "<group>"; };
 		E24F9550285BB46100B3E040 /* TotalPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalPriceTableViewCell.xib; sourceTree = "<group>"; };
+		E24F9559285BBAE300B3E040 /* MainScreenTableView+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainScreenTableView+EX.swift"; sourceTree = "<group>"; };
+		E24F955E285BBB2C00B3E040 /* DetailsProductTableView+EX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsProductTableView+EX.swift"; sourceTree = "<group>"; };
 		E27A216E285B1580004E7E75 /* ApiServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -394,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				E2479BD7285A744500D0E9C2 /* MainScreenViewController.swift */,
+				E24F9559285BBAE300B3E040 /* MainScreenTableView+EX.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -767,6 +772,7 @@
 			isa = PBXGroup;
 			children = (
 				E2479C4A285A744600D0E9C2 /* DetailsProductViewController.swift */,
+				E24F955E285BBB2C00B3E040 /* DetailsProductTableView+EX.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1072,6 +1078,7 @@
 				E2479C6B285A744700D0E9C2 /* SnapshotTransformViewOptions+Layout.swift in Sources */,
 				E2479C5B285A744700D0E9C2 /* UITextField+Extension.swift in Sources */,
 				E2479B9A285A735C00D0E9C2 /* AppDelegate.swift in Sources */,
+				E24F955A285BBAE300B3E040 /* MainScreenTableView+EX.swift in Sources */,
 				E2479C83285A744700D0E9C2 /* StackPageView.swift in Sources */,
 				E2479C63285A744700D0E9C2 /* OpenLinks.swift in Sources */,
 				E2479C93285A744700D0E9C2 /* MirroringLabel.swift in Sources */,
@@ -1129,6 +1136,7 @@
 				E2479CA1285A744700D0E9C2 /* DatabaseHandler.swift in Sources */,
 				E2479C68285A744700D0E9C2 /* dateEXTF.swift in Sources */,
 				E2479C62285A744700D0E9C2 /* Hud.swift in Sources */,
+				E24F955F285BBB2C00B3E040 /* DetailsProductTableView+EX.swift in Sources */,
 				E24F9551285BB46100B3E040 /* TotalPriceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
