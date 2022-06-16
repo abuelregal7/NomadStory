@@ -28,6 +28,8 @@ class DetailsProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Produts"
+        // call combine functions and configure tableView
         viewModel.fetchData()
         configureTableView()
         bindingLoadingToViewModel()
