@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57d-5P-n2D">
                         <rect key="frame" x="10" y="10" width="300" height="180"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hhs-w7-BJf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warningIconSubtle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hhs-w7-BJf">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="180"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -121,6 +121,7 @@
     </objects>
     <resources>
         <image name="loveSubProduct" width="36" height="36"/>
+        <image name="warningIconSubtle.png" width="21" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

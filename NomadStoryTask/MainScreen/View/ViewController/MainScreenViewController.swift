@@ -109,6 +109,7 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        // if section = 0 show list cell
         if indexPath.section == 0 {
             guard let cell = mainTableView.dequeueReusableCell(withIdentifier: MainScreenTableViewCell.cellID, for: indexPath) as? MainScreenTableViewCell else { return UITableViewCell() }
             let item = data?[indexPath.row]
@@ -130,10 +131,11 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
             }
             
             return cell
-        }else {
+        }else { // else section = 1 show totalPrice cell
             
             guard let cell = mainTableView.dequeueReusableCell(withIdentifier: TotalPriceTableViewCell.cellID, for: indexPath) as? TotalPriceTableViewCell else { return UITableViewCell() }
             
+            /// implement `map and reduce` to calculate total price
             let totalPrice = data?.map { Int($0.retailPrice) }.reduce(0, +)
             
             // UI elementin cell and load data from local database(dataModelValue)
@@ -162,13 +164,15 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        // if section = 0, make height = 200
         if indexPath.section == 0 {
             return 200
-        }else {
+        }else { // else check if toatPrice = 0 or totalPrice = nil
             let totalPrice = data?.map { Int($0.retailPrice) }.reduce(0, +)
-            if totalPrice == 0 || totalPrice == nil {
+            if totalPrice == 0 || totalPrice == nil { // if totalPrice = 0 or totalPrice = nil, then make height = 0
                 return 0
-            }else {
+            }else { // else => totalPrice != 0 or totalPrice != nil, then make height = 60
                 return 60
             }
         }
