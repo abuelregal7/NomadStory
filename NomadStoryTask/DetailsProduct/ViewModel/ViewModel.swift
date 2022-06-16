@@ -13,8 +13,8 @@ protocol ViewModelProtocol {
     var userData: DataModel? { get }
     var userDataPublisher: Published<DataModel?>.Publisher { get }
     
-    var userDataValue: DataModelValue? { get }
-    var userDataValuePublisher: Published<DataModelValue?>.Publisher { get }
+    var userDataValue: [DataModelValue]? { get }
+    var userDataValuePublisher: Published<[DataModelValue]?>.Publisher { get }
     
     var isError: String { get set }
     var isErrorPublisher: Published<String>.Publisher { get }
@@ -25,9 +25,6 @@ protocol ViewModelProtocol {
     var isReloading: Bool {get set}
     var isReloadingPublisher: Published<Bool>.Publisher { get }
     
-//    var startGoToHomePage: Bool { get }
-//    var startGoToHomePagePublisher: Published<Bool>.Publisher { get }
-//
     func fetchData()
     
 }
@@ -37,8 +34,8 @@ class ViewModel: ViewModelProtocol {
     @Published var userData: DataModel?
     var userDataPublisher: Published<DataModel?>.Publisher{$userData}
     
-    @Published var userDataValue: DataModelValue?
-    var userDataValuePublisher: Published<DataModelValue?>.Publisher{$userDataValue}
+    @Published var userDataValue: [DataModelValue]?
+    var userDataValuePublisher: Published<[DataModelValue]?>.Publisher{$userDataValue}
     
     @Published var isLoading: Bool = false
     var isLoadingPublisher: Published<Bool>.Publisher {$isLoading}
@@ -80,35 +77,18 @@ class ViewModel: ViewModelProtocol {
             print("got my response here : \(response)")
             self.userData = response
             
-            response.forEach{
-                self.userDataValue = $0.value
+            for result in response {
+                self.userDataValue = [result.value] //?.append(contentsOf: [result.value])
+                print(result.value.name)
             }
+            print(self.userDataValue ?? [])
             
-            self.isReloading = true
-            
-            guard let data = DataModelValue.database.add(OfflineStorageModel.self) else { return }
-            
-//            for result in response {
-//
-//                print(result)
-//
-//                data.id = result.value.id
-//                data.barcode = result.value.barcode
-//                data.dataModelDescription = result.value.dataModelDescription
-//                data.imageURL = result.value.imageURL
-//                data.name = result.value.name
-//                data.retailPrice = Int16(result.value.retailPrice)
-//                data.costPrice = Int16(result.value.costPrice ?? 0)
-//
-//                DataModelValue.database.save()
+//            response.forEach {
+//                print($0.value)
+//                $0.value.store()
 //            }
             
-            DataModelValue.database.save()
-            
-            response.forEach {
-                print($0.value)
-                $0.value.store()
-            }
+            self.isReloading = true
             
         }
         .store(in: &subscriptions)

@@ -13,7 +13,6 @@ class DetailsProductTableViewCell: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageOutlet: UIImageView!
-    @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var titleLabelOutlet: UILabel!
     @IBOutlet weak var loveButtonOutlet: UIButton!
     

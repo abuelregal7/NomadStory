@@ -1,0 +1,6 @@
+framework module Pods_NomadStoryTaskTests {
+  umbrella header "Pods-NomadStoryTaskTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

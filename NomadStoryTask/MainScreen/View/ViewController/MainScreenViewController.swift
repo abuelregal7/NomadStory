@@ -6,19 +6,32 @@
 //
 
 import UIKit
+import Combine
 
 class MainScreenViewController: UIViewController {
     
+    // properties
+    // outlets
     @IBOutlet weak var mainTableView: UITableView!
+    @IBOutlet weak var favouriteButtonOutlet: UIButton!
     
+    // instance of Singleton DtabaseHandler class
     let database = DatabaseHandler.shared
     
+    // var data and make didset{} to reload tableView
     var data: [OfflineStorageModel]? {
         didSet {
-            mainTableView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.mainTableView.reloadData()
+            }
         }
     }
     
+    // AnyCancellable
+    var subscripation = Set<AnyCancellable>()
+    
+    //MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,23 +39,31 @@ class MainScreenViewController: UIViewController {
         
     }
     
+    //MARK:- viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        favouriteButtonOutlet.pulsate()
+        
+        Hud.showHud(in: self.view)
         data = self.database.fetch(OfflineStorageModel.self)
+        Hud.dismiss()
         print(data)
         
     }
     
+    //MARK:- viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        Hud.showHud(in: self.view)
         data = self.database.fetch(OfflineStorageModel.self)
+        Hud.dismiss()
         print(data)
         
     }
     
-    //MARK:- configureTableView
+    //MARK:- configure TableView
     func configureTableView() {
         
         mainTableView.delegate = self
@@ -55,8 +76,10 @@ class MainScreenViewController: UIViewController {
         
     }
     
+    //MARK:- Favourite Button Action
     @IBAction func FavouriteButtonAction(_ sender: Any) {
         
+        // move and navigate from Main Screen to Details product screen
         let VC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailsProductViewController") as! DetailsProductViewController
         self.navigationController?.pushViewController(VC, animated: true)
         
@@ -65,6 +88,7 @@ class MainScreenViewController: UIViewController {
     
 }
 
+//MARK:- extension from MainScreenViewController for TableViewDataSource and TableViewDelegate
 extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,10 +100,39 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = mainTableView.dequeueReusableCell(withIdentifier: MainScreenTableViewCell.cellID, for: indexPath) as? MainScreenTableViewCell else { return UITableViewCell() }
         let item = data?[indexPath.row]
         
-        cell.imageOutlet.loadImage(item?.imageURL)
+        // UI elementin cell and load data from local database(dataModelValue)
+        cell.imageOutlet.setImageWith(item?.imageURL)
         cell.titleLabelOutlet.text = item?.name
         
+        // this closure in button action to => remove data from database(OfflineStorageModel)
+        cell.tappedButton = { [weak self] in
+            guard let self = self else { return }
+            guard let item = self.data?[indexPath.row] else { return }
+            self.mainTableView.beginUpdates()
+            self.database.delete(object: item)
+            self.data?.remove(at: indexPath.row)
+            self.mainTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.mainTableView.endUpdates()
+        }
+        
         return cell
+    }
+    
+    // to make swipe action in cell to remove product with indexPath.row
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete".localized) { [weak self] (action, view, completionHandler) in
+            guard let self = self else { return }
+            
+            guard let item = self.data?[indexPath.row] else { return }
+            self.mainTableView.beginUpdates()
+            self.database.delete(object: item)
+            self.data?.remove(at: indexPath.row)
+            self.mainTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.mainTableView.endUpdates()
+            completionHandler(true)
+            
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

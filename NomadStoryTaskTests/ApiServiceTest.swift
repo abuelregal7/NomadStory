@@ -1,11 +1,11 @@
 //
 //  ApiServiceTest.swift
-//  POMACTests
+//  NomadStoryTaskTests
 //
-//  Created by Ahmed on 5/30/22.
+//  Created by Ahmed on 6/15/22.
 //
 
-@testable import POMAC
+@testable import NomadStoryTask
 import XCTest
 import Combine
 
@@ -13,7 +13,7 @@ class ApiServiceTest: XCTestCase {
     
     // MARK: - Properties
     
-    var sut: HomeAPIProtocol!
+    var sut: FetchDataAPIProtocol!
     
     // Set AnyCancellable like disposeBag
     var subscriptions = Set<AnyCancellable>()
@@ -21,7 +21,7 @@ class ApiServiceTest: XCTestCase {
     // MARK: - SetUp
     override func setUp() {
         super.setUp()
-        sut = HomeAPI(networkRequest: NativeRequestable(), environment: .production)
+        sut = FetchDataAPI(networkRequest: NativeRequestable(), environment: .production)
     }
     
     // MARK: - Tear Down
@@ -34,7 +34,7 @@ class ApiServiceTest: XCTestCase {
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        sut = HomeAPI(networkRequest: NativeRequestable(), environment: .production)
+        sut = FetchDataAPI(networkRequest: NativeRequestable(), environment: .production)
     }
 
     override func tearDownWithError() throws {
@@ -48,9 +48,9 @@ class ApiServiceTest: XCTestCase {
         let expectation = XCTestExpectation(description: "Data Downloaded") // Api is async operation so thats's why we are using XCTestExpectation to be able towait finishing
         
         var responseError : Error?
-        var responseData: [HomeModel]?
+        var responseData: [DataModelValue]?
         
-        sut.home().sink { [weak self] (completion) in
+        sut.fetchData().sink { [weak self] (completion) in
             guard let self = self else { return }
             switch completion {
             case .failure(let error):
@@ -66,7 +66,11 @@ class ApiServiceTest: XCTestCase {
             
             guard let self = self else { return }
             
-            responseData = response
+            for result in response {
+                responseData = [result.value] //?.append(contentsOf: [result.value])
+                print(result.value)
+            }
+            
             expectation.fulfill()
             
             print("got my response here : \(response)")

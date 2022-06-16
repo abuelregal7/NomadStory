@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (5.6.1)
+  - CombineCocoa (0.4.0)
+  - Kingfisher (7.2.2)
+  - SwiftMessages (9.0.6):
+    - SwiftMessages/App (= 9.0.6)
+  - SwiftMessages/App (9.0.6)
+
+DEPENDENCIES:
+  - Alamofire
+  - CombineCocoa
+  - Kingfisher
+  - SwiftMessages
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CombineCocoa
+    - Kingfisher
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  CombineCocoa: 68a050228ce7c53c1c5ac2c57cccf92a7f5c5085
+  Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
+  SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
+
+PODFILE CHECKSUM: b3095536e3e19ba163876be15ff8376f5e219d7e
+
+COCOAPODS: 1.11.2

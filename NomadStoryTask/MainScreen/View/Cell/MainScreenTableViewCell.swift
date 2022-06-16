@@ -16,7 +16,7 @@ class MainScreenTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabelOutlet: UILabel!
     @IBOutlet weak var loveButtonOutlet: UIButton!
     
-    //var tappedButton: (() -> Void)?
+    var tappedButton: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +33,7 @@ class MainScreenTableViewCell: UITableViewCell {
     
     @IBAction func loveButtonAction(_ sender: Any) {
         
-        //tappedButton?()
+        tappedButton?()
         
     }
     
