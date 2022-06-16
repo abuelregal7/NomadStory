@@ -29,10 +29,10 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okY-1F-AGs">
-                                <rect key="frame" x="0.0" y="140" width="300" height="40"/>
+                                <rect key="frame" x="0.0" y="120" width="300" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHT-RX-cKS">
-                                        <rect key="frame" x="10" y="0.0" width="240" height="40"/>
+                                        <rect key="frame" x="10" y="10" width="240" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Men-0j-1Q9">
-                                        <rect key="frame" x="255" y="2.5" width="35" height="35"/>
+                                        <rect key="frame" x="255" y="3" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="O7b-g2-GBy"/>
                                             <constraint firstAttribute="width" constant="35" id="bMN-nW-cpj"/>
@@ -53,16 +53,24 @@
                                             <action selector="loveButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="YJx-1W-4M7"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price : 10 $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xt4-tA-wB8">
+                                        <rect key="frame" x="10" y="35.5" width="240" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Men-0j-1Q9" secondAttribute="trailing" constant="10" id="0bd-Js-w8e"/>
                                     <constraint firstItem="Men-0j-1Q9" firstAttribute="centerY" secondItem="fHT-RX-cKS" secondAttribute="centerY" id="119-lu-CbQ"/>
+                                    <constraint firstItem="Xt4-tA-wB8" firstAttribute="trailing" secondItem="fHT-RX-cKS" secondAttribute="trailing" id="2Xr-xa-Ie5"/>
                                     <constraint firstItem="Men-0j-1Q9" firstAttribute="leading" secondItem="fHT-RX-cKS" secondAttribute="trailing" constant="5" id="4V6-T7-Z1G"/>
-                                    <constraint firstItem="fHT-RX-cKS" firstAttribute="top" secondItem="okY-1F-AGs" secondAttribute="top" id="Rph-zy-vi3"/>
-                                    <constraint firstAttribute="bottom" secondItem="fHT-RX-cKS" secondAttribute="bottom" id="a6X-75-Sby"/>
+                                    <constraint firstItem="fHT-RX-cKS" firstAttribute="top" secondItem="okY-1F-AGs" secondAttribute="top" constant="10" id="Rph-zy-vi3"/>
                                     <constraint firstItem="fHT-RX-cKS" firstAttribute="leading" secondItem="okY-1F-AGs" secondAttribute="leading" constant="10" id="gAU-ei-tX4"/>
-                                    <constraint firstAttribute="height" constant="40" id="xte-Mr-8Eu"/>
+                                    <constraint firstItem="Xt4-tA-wB8" firstAttribute="leading" secondItem="fHT-RX-cKS" secondAttribute="leading" id="qBe-ww-Hqn"/>
+                                    <constraint firstItem="Xt4-tA-wB8" firstAttribute="top" secondItem="fHT-RX-cKS" secondAttribute="bottom" constant="5" id="qWg-NU-5UY"/>
+                                    <constraint firstAttribute="height" constant="60" id="xte-Mr-8Eu"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -105,6 +113,7 @@
                 <outlet property="containerView" destination="57d-5P-n2D" id="jRc-Bw-039"/>
                 <outlet property="imageOutlet" destination="Hhs-w7-BJf" id="3H7-aI-4jX"/>
                 <outlet property="loveButtonOutlet" destination="Men-0j-1Q9" id="9zX-Z9-QiI"/>
+                <outlet property="priceLabelOutlet" destination="Xt4-tA-wB8" id="pob-PY-MuE"/>
                 <outlet property="titleLabelOutlet" destination="fHT-RX-cKS" id="ybT-Qv-68l"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="79.6875"/>

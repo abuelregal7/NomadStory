@@ -97,6 +97,7 @@ extension DetailsProductViewController: UITableViewDataSource, UITableViewDelega
         // UI elementin cell and load data from local database(dataModelValue)
         cell.imageOutlet.setImageWith(dataModelValue[indexPath.row].imageURL)//.loadImage(item?.imageURL)
         cell.titleLabelOutlet.text = dataModelValue[indexPath.row].name
+        cell.priceLabelOutlet.text = "Price : \(dataModelValue[indexPath.row].retailPrice) $"
         
         // this closure in button action to => add data to database(OfflineStorageModel)
         cell.tappedButton = { [weak self] in

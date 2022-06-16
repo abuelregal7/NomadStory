@@ -14,6 +14,7 @@ class MainScreenTableViewCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageOutlet: UIImageView!
     @IBOutlet weak var titleLabelOutlet: UILabel!
+    @IBOutlet weak var priceLabelOutlet: UILabel!
     @IBOutlet weak var loveButtonOutlet: UIButton!
     
     var tappedButton: (() -> Void)?

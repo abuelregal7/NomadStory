@@ -73,6 +73,8 @@ class MainScreenViewController: UIViewController {
         //mainTableView.rowHeight = 200
         mainTableView.register(UINib(nibName: MainScreenTableViewCell.cellID, bundle: nil),
                            forCellReuseIdentifier: MainScreenTableViewCell.cellID)
+        mainTableView.register(UINib(nibName: TotalPriceTableViewCell.cellID, bundle: nil),
+                           forCellReuseIdentifier: TotalPriceTableViewCell.cellID)
         
     }
     
@@ -91,31 +93,55 @@ class MainScreenViewController: UIViewController {
 //MARK:- extension from MainScreenViewController for TableViewDataSource and TableViewDelegate
 extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data?.count ?? 0
+        
+        if section == 0 {
+            return data?.count ?? 0
+        }else {
+            return 1
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = mainTableView.dequeueReusableCell(withIdentifier: MainScreenTableViewCell.cellID, for: indexPath) as? MainScreenTableViewCell else { return UITableViewCell() }
-        let item = data?[indexPath.row]
-        
-        // UI elementin cell and load data from local database(dataModelValue)
-        cell.imageOutlet.setImageWith(item?.imageURL)
-        cell.titleLabelOutlet.text = item?.name
-        
-        // this closure in button action to => remove data from database(OfflineStorageModel)
-        cell.tappedButton = { [weak self] in
-            guard let self = self else { return }
-            guard let item = self.data?[indexPath.row] else { return }
-            self.mainTableView.beginUpdates()
-            self.database.delete(object: item)
-            self.data?.remove(at: indexPath.row)
-            self.mainTableView.deleteRows(at: [indexPath], with: .automatic)
-            self.mainTableView.endUpdates()
+        if indexPath.section == 0 {
+            guard let cell = mainTableView.dequeueReusableCell(withIdentifier: MainScreenTableViewCell.cellID, for: indexPath) as? MainScreenTableViewCell else { return UITableViewCell() }
+            let item = data?[indexPath.row]
+            
+            // UI elementin cell and load data from local database(dataModelValue)
+            cell.imageOutlet.setImageWith(item?.imageURL)
+            cell.titleLabelOutlet.text = item?.name
+            cell.priceLabelOutlet.text = "Price : \(item?.retailPrice ?? 0) $"
+            
+            // this closure in button action to => remove data from database(OfflineStorageModel)
+            cell.tappedButton = { [weak self] in
+                guard let self = self else { return }
+                guard let item = self.data?[indexPath.row] else { return }
+                self.mainTableView.beginUpdates()
+                self.database.delete(object: item)
+                self.data?.remove(at: indexPath.row)
+                self.mainTableView.deleteRows(at: [indexPath], with: .automatic)
+                self.mainTableView.endUpdates()
+            }
+            
+            return cell
+        }else {
+            
+            guard let cell = mainTableView.dequeueReusableCell(withIdentifier: TotalPriceTableViewCell.cellID, for: indexPath) as? TotalPriceTableViewCell else { return UITableViewCell() }
+            
+            let totalPrice = data?.map { Int($0.retailPrice) }.reduce(0, +)
+            
+            // UI elementin cell and load data from local database(dataModelValue)
+            cell.priceLabelOutlet.text = "Total Price : \(totalPrice ?? 0) $"
+            
+            return cell
         }
         
-        return cell
     }
     
     // to make swipe action in cell to remove product with indexPath.row
@@ -136,7 +162,16 @@ extension MainScreenViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        if indexPath.section == 0 {
+            return 200
+        }else {
+            let totalPrice = data?.map { Int($0.retailPrice) }.reduce(0, +)
+            if totalPrice == 0 || totalPrice == nil {
+                return 0
+            }else {
+                return 60
+            }
+        }
     }
     
 }

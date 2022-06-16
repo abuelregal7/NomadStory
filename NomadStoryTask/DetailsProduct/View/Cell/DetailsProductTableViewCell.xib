@@ -29,16 +29,16 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ql3-y2-1Y2">
-                                <rect key="frame" x="0.0" y="125" width="300" height="55"/>
+                                <rect key="frame" x="0.0" y="120" width="300" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJE-Fb-WuW">
-                                        <rect key="frame" x="10" y="5" width="230" height="45"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="10" y="10" width="230" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qk-9V-JJY">
-                                        <rect key="frame" x="250" y="7.5" width="40" height="40"/>
+                                        <rect key="frame" x="250" y="10" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="9Y2-N9-C5x"/>
                                             <constraint firstAttribute="width" constant="40" id="sXX-FI-hNd"/>
@@ -48,14 +48,22 @@
                                             <action selector="loveButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PQT-sh-elB"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qv7-Gm-239">
+                                        <rect key="frame" x="10" y="35.5" width="230" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="dJE-Fb-WuW" secondAttribute="bottom" constant="5" id="RPe-xz-UGl"/>
+                                    <constraint firstItem="qv7-Gm-239" firstAttribute="top" secondItem="dJE-Fb-WuW" secondAttribute="bottom" constant="5" id="D4w-X3-n7G"/>
+                                    <constraint firstItem="qv7-Gm-239" firstAttribute="leading" secondItem="dJE-Fb-WuW" secondAttribute="leading" id="TOx-lE-qag"/>
                                     <constraint firstItem="6qk-9V-JJY" firstAttribute="leading" secondItem="dJE-Fb-WuW" secondAttribute="trailing" constant="10" id="TjK-bN-l0i"/>
                                     <constraint firstItem="dJE-Fb-WuW" firstAttribute="leading" secondItem="ql3-y2-1Y2" secondAttribute="leading" constant="10" id="ZmK-u6-pn8"/>
-                                    <constraint firstAttribute="height" constant="55" id="gaL-xy-bD7"/>
-                                    <constraint firstItem="dJE-Fb-WuW" firstAttribute="top" secondItem="ql3-y2-1Y2" secondAttribute="top" constant="5" id="i3H-B6-5YF"/>
+                                    <constraint firstAttribute="height" constant="60" id="gaL-xy-bD7"/>
+                                    <constraint firstItem="dJE-Fb-WuW" firstAttribute="top" secondItem="ql3-y2-1Y2" secondAttribute="top" constant="10" id="i3H-B6-5YF"/>
+                                    <constraint firstItem="qv7-Gm-239" firstAttribute="trailing" secondItem="dJE-Fb-WuW" secondAttribute="trailing" id="oe2-5i-1If"/>
                                     <constraint firstAttribute="trailing" secondItem="6qk-9V-JJY" secondAttribute="trailing" constant="10" id="pU6-dg-z8e"/>
                                     <constraint firstItem="6qk-9V-JJY" firstAttribute="centerY" secondItem="ql3-y2-1Y2" secondAttribute="centerY" id="tQM-f1-GIP"/>
                                 </constraints>
@@ -108,6 +116,7 @@
                 <outlet property="containerView" destination="4G3-yE-8eh" id="I8C-do-JaI"/>
                 <outlet property="imageOutlet" destination="q06-5I-RCN" id="67e-6q-eHl"/>
                 <outlet property="loveButtonOutlet" destination="6qk-9V-JJY" id="DAt-Zi-h3G"/>
+                <outlet property="priceLabelOutlet" destination="qv7-Gm-239" id="JTr-2Z-UFu"/>
                 <outlet property="titleLabelOutlet" destination="dJE-Fb-WuW" id="8bC-A5-eEf"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="75"/>

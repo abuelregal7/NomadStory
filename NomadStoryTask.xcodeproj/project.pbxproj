@@ -102,6 +102,8 @@
 		E2479CA5285A744700D0E9C2 /* NativeRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2479C51285A744700D0E9C2 /* NativeRequestable.swift */; };
 		E2479CA6285A744700D0E9C2 /* ServiceEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2479C52285A744700D0E9C2 /* ServiceEndpoints.swift */; };
 		E2479CA7285A744700D0E9C2 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2479C53285A744700D0E9C2 /* NetworkRequest.swift */; };
+		E24F9551285BB46100B3E040 /* TotalPriceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F954F285BB46100B3E040 /* TotalPriceTableViewCell.swift */; };
+		E24F9552285BB46100B3E040 /* TotalPriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E24F9550285BB46100B3E040 /* TotalPriceTableViewCell.xib */; };
 		E27A216F285B1580004E7E75 /* ApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A216E285B1580004E7E75 /* ApiServiceTest.swift */; };
 		F033E4F73210AFB010F7A74F /* Pods_NomadStoryTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7925549326973A3D1B5B1F3A /* Pods_NomadStoryTask.framework */; };
 /* End PBXBuildFile section */
@@ -233,6 +235,8 @@
 		E2479C51285A744700D0E9C2 /* NativeRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeRequestable.swift; sourceTree = "<group>"; };
 		E2479C52285A744700D0E9C2 /* ServiceEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEndpoints.swift; sourceTree = "<group>"; };
 		E2479C53285A744700D0E9C2 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		E24F954F285BB46100B3E040 /* TotalPriceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPriceTableViewCell.swift; sourceTree = "<group>"; };
+		E24F9550285BB46100B3E040 /* TotalPriceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TotalPriceTableViewCell.xib; sourceTree = "<group>"; };
 		E27A216E285B1580004E7E75 /* ApiServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -379,6 +383,7 @@
 		E2479BD3285A744500D0E9C2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				E24F954E285BB43300B3E040 /* TotalPrice */,
 				E2479BD4285A744500D0E9C2 /* MainScreenTableViewCell.xib */,
 				E2479BD5285A744500D0E9C2 /* MainScreenTableViewCell.swift */,
 			);
@@ -787,6 +792,15 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		E24F954E285BB43300B3E040 /* TotalPrice */ = {
+			isa = PBXGroup;
+			children = (
+				E24F954F285BB46100B3E040 /* TotalPriceTableViewCell.swift */,
+				E24F9550285BB46100B3E040 /* TotalPriceTableViewCell.xib */,
+			);
+			path = TotalPrice;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -902,6 +916,7 @@
 				E2479BA6285A735F00D0E9C2 /* Assets.xcassets in Resources */,
 				E2479BA1285A735C00D0E9C2 /* Main.storyboard in Resources */,
 				E2479C9F285A744700D0E9C2 /* DetailsProductTableViewCell.xib in Resources */,
+				E24F9552285BB46100B3E040 /* TotalPriceTableViewCell.xib in Resources */,
 				E2479C90285A744700D0E9C2 /* ToastView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1114,6 +1129,7 @@
 				E2479CA1285A744700D0E9C2 /* DatabaseHandler.swift in Sources */,
 				E2479C68285A744700D0E9C2 /* dateEXTF.swift in Sources */,
 				E2479C62285A744700D0E9C2 /* Hud.swift in Sources */,
+				E24F9551285BB46100B3E040 /* TotalPriceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
